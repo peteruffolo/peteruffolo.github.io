@@ -10,7 +10,7 @@ img {
 
 .desc {
     text-align: left;
-    font-family: Arial, 'Courier New', Helvetica;
+    /*font-family: Consolas, 'Courier New', Helvetica;*/
     font-size: .75em;
 }
 
