@@ -1,7 +1,7 @@
 ﻿.gallery {
     width: 33%;
     height: auto;
-    float: left;
+    /*float: left;*/
 }
 
 img {
