@@ -5,6 +5,7 @@
 
 body {
     font-family: Consolas;
+    margin: 0;
 }
 
 .notice {
@@ -13,6 +14,7 @@ body {
     top: 50vh;
     left: 50vw;
     font-style: italic;
+    transform: translate(-50%, -50%);
 }
 
 .topnav {
@@ -45,7 +47,7 @@ body {
     }
 
 @media screen and (max-width: 700px) {
-    .topnav a {
+    .topnav a:not(.icon) {
         display: none;
     }
 
@@ -53,9 +55,7 @@ body {
         float: right;
         display: block;
     }
-}
 
-@media screen and (max-width: 700px) {
     .topnav.responsive {
         position: relative;
     }
