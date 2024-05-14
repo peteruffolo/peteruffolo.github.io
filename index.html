@@ -1,65 +1,221 @@
-<!--Next steps:
-    - Make responsive image gallery
-    - Make image pop up
-    - Make captions responsive
-    - Add additional pages
-    - Add footer
-    -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link href="./StyleSheet1.css" rel="stylesheet" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="icon" type="image/x-icon" href="https://drive.google.com/thumbnail?id=1xYlDGX48rnWm7L65KIO_FfY52h6FKpZR&sz=s4000">
 </head>
 
 <body>
-    <div class="center">
-        <div class="gallery">
-            <img src="https://drive.google.com/thumbnail?id=1hOA7-d2UKDnKR1fI7V7fc5eTQWgAtLVf&sz=s4000">
-            <div class="desc">
-                <span class="title">Untitled</span>
-                <span class="year">2022</span><br />
-                <span class="size">36 x 48 inches</span><br />
-                <span class="materials">Oil on Masonite</span>
+
+    <!--Gallery-->
+    <div class="section">
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1cz5DPfCWbThWd6H8o2NhREZ3QQjNPBxY&sz=s4000" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
             </div>
         </div>
-        <div class="gallery">
-            <img src="https://drive.google.com/thumbnail?id=1hzfwai3SlRuFVn7aNtKEz3MocvqJzliY&sz=s4000">
-            <div class="desc">
-                <span class="title">Lady of Ephesus</span>
-                <span class="year">2022</span><br />
-                <span class="size">36 x 48 inches</span><br />
-                <span class="materials">Oil on Masonite</span>
+
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1PLpfYQcJUgYeNXnGj3jc5YH6q_jndnjz&sz=s4000" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
             </div>
         </div>
     </div>
 
-    <div class="center">
-        <div class="gallery">
-            <img src="https://drive.google.com/thumbnail?id=17eEpr9U9lDxiVEDGdCICRTKXBSrh11pq&sz=s4000">
-            <div class="desc">
-                <span class="title">Cacophony</span>
-                <span class="year">2022</span><br />
-                <span class="size">36 x 48 inches</span><br />
-                <span class="materials">Oil on Masonite</span>
+    <div class="section">
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1hOA7-d2UKDnKR1fI7V7fc5eTQWgAtLVf&sz=s4000" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
             </div>
         </div>
-        <div class="gallery">
-            <img src="https://drive.google.com/thumbnail?id=1BqASU2SC7bp5z83JzQGZQjiAAUgzUKl0&sz=s4000">
-            <div class="desc">
-                <span class="title">And to dust you shall return</span>
-                <span class="year">2022</span><br />
-                <span class="size">36 x 48 inches</span><br />
-                <span class="materials">Oil on Masonite</span>
+
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1hzfwai3SlRuFVn7aNtKEz3MocvqJzliY&sz=s4000" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
             </div>
         </div>
     </div>
+
+    <div class="section">
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=17eEpr9U9lDxiVEDGdCICRTKXBSrh11pq&sz=s4000" onclick="openModal();currentSlide(5)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
+            </div>
+        </div>
+
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1BqASU2SC7bp5z83JzQGZQjiAAUgzUKl0&sz=s4000" onclick="openModal();currentSlide(6)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="painting" id="dejeuner">
+            <img src="https://drive.google.com/thumbnail?id=1ugZrcjPw40lPyfQ0xdEtO4YvtdXfC2of&sz=s4000" onclick="openModal();currentSlide(7)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1r3RiMfzNSZxOZQ35SLPiT2lIFI16bHmL&sz=s4000" onclick="openModal();currentSlide(8)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
+            </div>
+        </div>
+
+        <div class="painting">
+            <img src="https://drive.google.com/thumbnail?id=1VxqyRFgQEkvr5ZYxYvLDWn5ljSuEeRtp&sz=s4000" onclick="openModal();currentSlide(9)" class="hover-shadow">
+            <div class="caption">
+                <span class="title">Title </span>
+                <span>(Year)<br />Size<br />Materials</span>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <div id="myModal" class="modal">
+        <div class="navigation">
+            <div>
+                <a class="prev" onclick="plusSlides(-1)">&#8701;</a>
+                <a class="next" onclick="plusSlides(1)">&#8702;</a>
+            </div>
+            <a class="close" onclick="closeModal()">&#10005;</a>
+        </div>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1cz5DPfCWbThWd6H8o2NhREZ3QQjNPBxY&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1PLpfYQcJUgYeNXnGj3jc5YH6q_jndnjz&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1hOA7-d2UKDnKR1fI7V7fc5eTQWgAtLVf&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1hzfwai3SlRuFVn7aNtKEz3MocvqJzliY&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=17eEpr9U9lDxiVEDGdCICRTKXBSrh11pq&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1BqASU2SC7bp5z83JzQGZQjiAAUgzUKl0&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1ugZrcjPw40lPyfQ0xdEtO4YvtdXfC2of&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1r3RiMfzNSZxOZQ35SLPiT2lIFI16bHmL&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="https://drive.google.com/thumbnail?id=1VxqyRFgQEkvr5ZYxYvLDWn5ljSuEeRtp&sz=s4000" class="Slide-Image">
+                <div class="caption">
+                    <span class="title">Title </span>
+                    <span>(Year)<br />Size<br />Materials</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
 </body>
-
 </html>
-
-
