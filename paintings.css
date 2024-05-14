@@ -7,6 +7,18 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Consolas;
+}
+
+nav {
+    text-align: end;
+}
+
+a {
+    padding: 10px;
+}
+
 /* The Modal (background) */
 .modal {
     display: none;
@@ -84,13 +96,6 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.caption-container {
-    text-align: center;
-    background-color: white;
-    padding: 2px 16px;
-    color: white;
-}
-
 .demo {
     opacity: 0.6;
 }
@@ -106,14 +111,6 @@ img.hover-shadow {
 
 .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Consolas;
 }
 
 .section {

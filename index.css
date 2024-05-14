@@ -1,0 +1,28 @@
+﻿@font-face {
+    font-family: "Consolas";
+    src: url("../Consolas/consola.ttf");
+}
+
+body {
+    font-family: Consolas;
+}
+
+nav {
+    text-align: end;
+    font-family: Consolas;
+}
+
+a {
+    padding: 10px;
+}
+
+.notice {
+    display: flex;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    padding: 50vh;
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+}
