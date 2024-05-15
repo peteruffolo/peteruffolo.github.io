@@ -11,15 +11,17 @@
 
 <body>
 
-    <nav>
+    <div class="topnav" id="myTopnav">
         <a href="./index.html">Home</a>
-        <a href="./paintings.html">Paintings</a>
-        <a>Drawings</a>
-        <a>3D Works</a>
-        <a>Piano Performances</a>
-        <a>About</a>
-    </nav>
-</body>
+        <a href="./paintings.html"  class="active">Paintings</a>
+        <a href="">Drawings</a>
+        <a href="">3D Works</a>
+        <a href="">Piano Performances</a>
+        <a href="">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars">menu</i>
+        </a>
+    </div>
 
     <!--Gallery-->
     <div class="section">
@@ -292,6 +294,15 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
             captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
     </script>
 
