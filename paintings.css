@@ -20,6 +20,8 @@ body {
     position: fixed;
     width: 100vw;
     height: 50px;
+    transition: height linear .5s;
+
 }
 
 .logo {
@@ -30,72 +32,84 @@ body {
     width: 50px;
     height: 50px;
 }
-    .topnav a {
-        color: black;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 14px;
-        transition: all linear .2s;
-        float: left;
 
-    }
-
-        .topnav a:hover {
-            transform: skew(-20deg);
-        }
-
-        .topnav a.active {
-            text-decoration: underline;
-        }
-
-        .topnav a:not(.icon) {
-            display: none;
-            position: relative;
-            left: 50px;
-        }
-
-        .topnav a.icon {
-            position: fixed;
-            top: 0;
-            right: 0;
-            display: block;
-            transform: rotate(0);
-            transition: transform .5s;
-        }
-
-/*Navigation format when menu button is pressed*/
-        .topnav.visible .icon {
-            transform: rotate(90deg);
-            transition: transform .5s;
-        }
-
-        .topnav.visible a.nav-page {
-            display: block;
-        }
-
-@media screen and (max-width: 700px) {
-    .topnav.visible {
-        position: fixed;
-    }
-        .topnav.visible a {
-            float: none;
-        }
-    
-        .topnav a:not(.icon) {
-            position: relative;
-            left: 0;
-            top: 50px;
-    }
-    .topnav.visible {
-        height: 325px
-    }
+/* Format for all navigation text */
+.topnav a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.spacer {
+/* Format only for Menu Icon */
+.topnav a.icon {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    transform: rotate(0);
+    transition: transform .3s linear;
+}
+
+/* Format only for navigation hyperlinks */
+.topnav a.nav-page {
+    float: left;
+    display: block;
     position: relative;
-    top: 50px;
-    height: 20px;
-    width: 100vw;    
+    left: 50px;
+    top: 0;
+    /* When button is unpressed, hide and disable the hyperlinks */
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    transition: transform .3s linear,
+            opacity .75s ease-in-out,
+            float 0s linear 1s allow-discrete,
+            top 0s linear 1s,
+            left 0s linear 1s;
+}
+
+/* Slightly rotate hyperlinks in the navigation box when hovering */
+.topnav a.nav-page:hover {
+    transform: skew(-20deg);
+}
+
+/* Underline the current page */
+.topnav a.active {
+    text-decoration: underline;
+}
+
+/* Format for icon when the button is pressed */
+.topnav.visible .icon {
+    transform: rotate(90deg);
+}
+
+/* Format for the hyperlinks when the button is pressed */
+.topnav.visible a.nav-page {
+    /* When the button is pressed, show and enable the hyperlinks */
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: float 0s linear 0s allow-discrete,
+                opacity .75s ease-in-out,
+                transform .3s linear;
+}
+
+/* Formats for small screens */
+@media screen and (max-width: 700px) {
+    /* Formats for hyperlinks */
+    .topnav.visible a.nav-page {
+        float: none;
+        position: relative;
+        left: 0;
+        top: 50px;
+    }
+
+    /* Format for entire navigation box when button is pressed*/
+    .topnav.visible {
+        height: 325px;
+        transition: height linear .5s;
+    }
 }
 
 /* The Modal (background) */
@@ -129,13 +143,13 @@ body {
 }
 
 
-    .mySlides Img {
-        max-height: 75vh;
-        width: auto;
-        max-width: 95vw;
-        display: block;
-        /*border: dotted blue 3px;*/
-    }
+.mySlides Img {
+    max-height: 75vh;
+    width: auto;
+    max-width: 95vw;
+    display: block;
+    /*border: dotted blue 3px;*/
+}
 
 .spacer {
     color: lightpink;
@@ -164,12 +178,12 @@ body {
     user-select: none;
 }
 
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover,
-    .next:hover,
-    .close:hover {
-        color: rgba(0, 0, 0, 0.5);
-    }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover,
+.close:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
 
 img.hover-shadow {
     transition: 0.3s;
@@ -197,12 +211,12 @@ img.hover-shadow {
     /*border: 5px dotted lightblue;*/
 }
 
-    .painting img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        /*border: 5px dashed black;*/
-    }
+.painting img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /*border: 5px dashed black;*/
+}
 
 
 @media screen and (max-width: 800px) {

@@ -25,6 +25,8 @@ body {
     position: fixed;
     width: 100vw;
     height: 50px;
+    transition: height linear .5s;
+
 }
 
 .logo {
@@ -36,65 +38,81 @@ body {
     height: 50px;
 }
 
+/* Format for all navigation text */
 .topnav a {
     color: black;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 14px;
-    transition: all linear .2s;
-    float: left;
 }
 
-    .topnav a:hover {
-        transform: skew(-20deg);
-    }
+/* Format only for Menu Icon */
+.topnav a.icon {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    transform: rotate(0);
+    transition: transform .3s linear;
+}
 
-    .topnav a.active {
-        text-decoration: underline;
-    }
+/* Format only for navigation hyperlinks */
+.topnav a.nav-page {
+    float: left;
+    display: block;
+    position: relative;
+    left: 50px;
+    top: 0;
+    /* When button is unpressed, hide and disable the hyperlinks */
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    transition: transform .3s linear,
+            opacity .75s ease-in-out,
+            float 0s linear 1s allow-discrete,
+            top 0s linear 1s,
+            left 0s linear 1s;
+}
 
-    .topnav a:not(.icon) {
-        display: none;
-        position: relative;
-        left: 50px;
-    }
+/* Slightly rotate hyperlinks in the navigation box when hovering */
+.topnav a.nav-page:hover {
+    transform: skew(-20deg);
+}
 
-    .topnav a.icon {
-        position: fixed;
-        top: 0;
-        right: 0;
-        float: right;
-        display: block;
-        transform: rotate(0);
-        transition: transform .5s;
-    }
+/* Underline the current page */
+.topnav a.active {
+    text-decoration: underline;
+}
 
-/*Navigation format when menu button is pressed*/
+/* Format for icon when the button is pressed */
 .topnav.visible .icon {
     transform: rotate(90deg);
-    transition: transform .5s;
 }
 
+/* Format for the hyperlinks when the button is pressed */
 .topnav.visible a.nav-page {
-    display: block;
+    /* When the button is pressed, show and enable the hyperlinks */
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: float 0s linear 0s allow-discrete,
+                opacity .75s ease-in-out,
+                transform .3s linear;
 }
 
+/* Formats for small screens */
 @media screen and (max-width: 700px) {
-    .topnav.visible {
-        position: fixed;
-    }
-
-        .topnav.visible a {
-            float: none;
-        }
-
-    .topnav a:not(.icon) {
+    /* Formats for hyperlinks */
+    .topnav.visible a.nav-page {
+        float: none;
         position: relative;
         left: 0;
         top: 50px;
     }
 
+    /* Format for entire navigation box when button is pressed*/
     .topnav.visible {
-        height: 325px
+        height: 325px;
+        transition: height linear .5s;
     }
 }
