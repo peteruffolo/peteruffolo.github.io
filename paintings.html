@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -10,19 +10,19 @@
 </head>
 
 <body>
-
     <div class="topnav" id="myTopnav">
-        <a href="./index.html">Home</a>
-        <a href="./paintings.html"  class="active">Paintings</a>
-        <a href="">Drawings</a>
-        <a href="">3D Works</a>
-        <a href="">Piano Performances</a>
-        <a href="">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars">&#8801</i>
-        </a>
+        <img src="./Brand Images/Logo.png" class="logo">
+        <a href="./index.html"        class="nav-page">Home</a>
+        <a href="./paintings.html"    class="active nav-page">Paintings</a>
+        <a href="javascript:void(0);" class="nav-page">Drawings</a>
+        <a href="javascript:void(0);" class="nav-page">3D Works</a>
+        <a href="javascript:void(0);" class="nav-page">Piano Performances</a>
+        <a href="javascript:void(0);" class="nav-page">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="showNav()">&#8801</a>
     </div>
-    <br />
+
+    <div class="spacer"></div>
+    
     <!--Gallery-->
     <div class="section">
         <div class="painting">
@@ -289,10 +289,10 @@
             slides[slideIndex - 1].style.display = "block";
         }
 
-        function myFunction() {
+        function showNav() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
-                x.className += " responsive";
+                x.className += " visible";
             } else {
                 x.className = "topnav";
             }

@@ -22,72 +22,79 @@ body {
 .topnav {
     background-color: white;
     overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 50px;
 }
 
-    .topnav a {
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 14px;
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.topnav a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all linear .2s;
+    float: left;
+}
+
+    .topnav a:hover {
+        transform: skew(-20deg);
     }
 
-        .topnav a:hover {
-            transform: skew(-30deg);
-            transition: all linear .2s;
-        }
+    .topnav a.active {
+        text-decoration: underline;
+    }
 
-        .topnav a.active {
-            text-decoration: underline;
-        }
-
-        .topnav a:not(.icon) {
-            display: none;
-        }
-
-        .topnav a.icon {
-            float: right;
-            display: block;
-            transform: rotate(0);
-            transition: transform .5s;
-        }
-
-    /*Navigation format when menu button is pressed*/
-    .topnav.responsive {
+    .topnav a:not(.icon) {
+        display: none;
         position: relative;
+        left: 50px;
     }
 
-        .topnav.responsive .icon {
-            position: absolute;
-            right: 0;
-            top: 0;
-            transform: rotate(90deg);
-            transition: transform .5s;
-        }
+    .topnav a.icon {
+        position: fixed;
+        top: 0;
+        right: 0;
+        float: right;
+        display: block;
+        transform: rotate(0);
+        transition: transform .5s;
+    }
 
-        .topnav.responsive a {
-            float: left;
-            display: block;
-            text-align: left;
-            transition: all linear 1s;
-        }
+/*Navigation format when menu button is pressed*/
+.topnav.visible .icon {
+    transform: rotate(90deg);
+    transition: transform .5s;
+}
 
+.topnav.visible a.nav-page {
+    display: block;
+}
 
 @media screen and (max-width: 700px) {
-
-    .topnav.responsive {
-        position: relative;
+    .topnav.visible {
+        position: fixed;
     }
 
-        .topnav.responsive .icon {
-            position: absolute;
-            right: 0;
-            top: 0;
+        .topnav.visible a {
+            float: none;
         }
 
-        .topnav.responsive a {
-            float: none;
-            display: block;
-            text-align: left;
-        }
+    .topnav a:not(.icon) {
+        position: relative;
+        left: 0;
+        top: 50px;
+    }
+
+    .topnav.visible {
+        height: 325px
+    }
 }
