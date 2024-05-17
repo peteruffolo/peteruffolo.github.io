@@ -17,44 +17,63 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/*Navigation-------------------------------------------------*/
+/*Navigation format when menu button is unpressed*/
 .topnav {
-    overflow: hidden;
     background-color: white;
+    overflow: hidden;
 }
 
     .topnav a {
-        float: left;
-        display: block;
         color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
-
+        font-size: 14px;
     }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            transform: skew(-30deg);
+            transition: all linear .2s;
         }
 
         .topnav a.active {
             text-decoration: underline;
         }
 
-    .topnav .icon {
-        display: none;
+        .topnav a:not(.icon) {
+            display: none;
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+            transform: rotate(0);
+            transition: transform .5s;
+        }
+
+    /*Navigation format when menu button is pressed*/
+    .topnav.responsive {
+        position: relative;
     }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: rotate(90deg);
+            transition: transform .5s;
+        }
+
+        .topnav.responsive a {
+            float: left;
+            display: block;
+            text-align: left;
+            transition: all linear 1s;
+        }
+
 
 @media screen and (max-width: 700px) {
-    .topnav a:not(.icon) {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
 
     .topnav.responsive {
         position: relative;

@@ -12,43 +12,65 @@ body {
     margin: 0;
 }
 
+/*Navigation-------------------------------------------------*/
+/*Navigation format when menu button is unpressed*/
 .topnav {
-    overflow: hidden;
     background-color: white;
+    overflow: hidden;
 }
 
     .topnav a {
-        float: left;
-        display: block;
         color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
+        font-size: 14px;
     }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            transform: skew(-30deg);
+            transition: all linear .2s;
         }
 
         .topnav a.active {
             text-decoration: underline;
         }
 
-    .topnav .icon {
-        display: none;
+        .topnav a:not(.icon) {
+            display: none;
+            
+        }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+            transform: rotate(0);
+            transition: transform .5s;
+        }
+
+/*Navigation format when menu button is pressed*/
+    .topnav.responsive {
+        position: relative;
     }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: rotate(90deg);
+            transition: transform .5s;
+        }
+
+        .topnav.responsive a {
+            float: left;
+            display: block;
+            text-align: left;
+            transition: all linear 1s;
+
+        }
+
 
 @media screen and (max-width: 700px) {
-    .topnav a:not(.icon) {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
 
     .topnav.responsive {
         position: relative;
@@ -87,7 +109,6 @@ body {
     justify-content: center;
     margin: auto;
     max-width: 1200px;
-    
     /*border: dashed gray 3px;*/
 }
 
@@ -95,19 +116,17 @@ body {
     text-align: left;
     float: left;
     margin: auto;
-    
     /*border: solid black 5px;*/
 }
 
 
-.mySlides Img {
-    max-height: 75vh;
-    width: auto;
-    max-width: 95vw;
-    display: block;
-    
-    /*border: dotted blue 3px;*/
-}
+    .mySlides Img {
+        max-height: 75vh;
+        width: auto;
+        max-width: 95vw;
+        display: block;
+        /*border: dotted blue 3px;*/
+    }
 
 .spacer {
     color: lightpink;
@@ -120,7 +139,6 @@ body {
     max-width: 1200px;
     margin: auto;
     padding: 16px;
-    
     /*border: solid;*/
 }
 
@@ -137,12 +155,12 @@ body {
     user-select: none;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover,
-.close:hover {
-    color: rgba(0, 0, 0, 0.5);
-}
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover,
+    .close:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
 
 .demo {
     opacity: 0.6;
@@ -167,7 +185,6 @@ img.hover-shadow {
     justify-content: center;
     margin: auto;
     max-width: 800px;
-    
     /*border: 5px solid black;*/
 }
 
@@ -177,17 +194,15 @@ img.hover-shadow {
     max-width: 50%;
     padding: 5%;
     margin: auto;
-    
     /*border: 5px dotted lightblue;*/
 }
 
-.painting img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    
-    /*border: 5px dashed black;*/
-}
+    .painting img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        /*border: 5px dashed black;*/
+    }
 
 
 @media screen and (max-width: 800px) {
@@ -209,7 +224,6 @@ img.hover-shadow {
 .caption {
     margin-top: 10px;
     font-size: .85em;
-
     /*border: solid;*/
 }
 
