@@ -10,6 +10,7 @@
 body {
     font-family: Consolas;
     margin: 0;
+    width: 100%;
 }
 
 /*Navigation-------------------------------------------------*/
@@ -23,13 +24,21 @@ body {
     transition: height linear .5s;
 }
 
-.logo {
+.topnav a.logo {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 5px;
+    padding: 0;
     width: 50px;
     height: 50px;
+}
+
+.topnav a.logo img {
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* Format for all navigation text */
@@ -48,6 +57,7 @@ body {
     display: block;
     transform: rotate(0);
     transition: transform .3s linear;
+    font-size: 20px;
 }
 
 /* Format only for navigation hyperlinks */
@@ -115,7 +125,7 @@ body {
     height: 50px;
     padding: 0;
     margin: 0;
-    width: 90vw;
+    width: 50vw;
     background-color: white;
 }
 
@@ -255,3 +265,36 @@ img.hover-shadow {
 #dejeuner {
     max-width: 100%;
 }
+
+/* Footer------------------------------ */
+.bttm-footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+}
+
+.bttm-footer .cr-notice {
+    font-size: 14px;
+    font-style: italic;
+    padding: 10px;
+}
+
+.fa {
+    padding: 0;
+    font-size: 25px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+.fa-instagram {
+    color: black;
+  }
+
+  .fa-linkedin {
+    color: black;
+  }
